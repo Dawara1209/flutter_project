@@ -31,7 +31,6 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
-/build/
 
 # Symbolication related
 app.*.symbols
@@ -44,8 +43,7 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-
-# Flutter関連の不要ファイル
+# Flutter関連の不要ファイル（build/ を無視）
 build/
 ios/
 android/.gradle/
@@ -53,3 +51,11 @@ android/local.properties
 pubspec.lock
 .dart_tool/
 .packages
+
+# ただし `build/web/` はGitに追加する
+!build/web
+
+# Flutter build outputs (ignore everything except build/web)
+build/
+!build/web
+!build/web/*
